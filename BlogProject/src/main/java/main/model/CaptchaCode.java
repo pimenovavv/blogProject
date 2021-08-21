@@ -1,16 +1,13 @@
 package main.model;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 import java.util.Date;
 
 @Data
-@NoArgsConstructor
 @Entity
-@Table(name="Captcha_codes")
-public class CaptchaCodes {
+@Table(name="captcha_codes")
+public class CaptchaCode {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;

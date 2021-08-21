@@ -1,15 +1,12 @@
 package main.model;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 
 
 @Data
-@NoArgsConstructor
 @Entity
-@Table(name="Tag2Post")
+@Table(name="tag2post")
 public class TagToPost {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

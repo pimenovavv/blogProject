@@ -1,18 +1,15 @@
 package main.model;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
 
 @Data
-@NoArgsConstructor
 @Entity
-@Table(name="Users")
-public class Users {
+@Table(name="users")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -28,16 +25,14 @@ public class Users {
     private String photo;
 
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    private List<Posts> posts;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Post> posts;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<PostVotes> postVotes;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    private List<PostComments> comments;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<PostComment> comments;
+
 
 }

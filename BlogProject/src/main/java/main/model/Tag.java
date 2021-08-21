@@ -1,17 +1,14 @@
 package main.model;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 import java.util.List;
 
 
 @Data
-@NoArgsConstructor
 @Entity
-@Table(name="Tags")
-public class Tags {
+@Table(name="tags")
+public class Tag {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -22,5 +19,5 @@ public class Tags {
     @JoinTable(name = "TagsToPost",
             joinColumns = @JoinColumn(name = "tagId"),
             inverseJoinColumns = @JoinColumn(name = "postId"))
-    private List<Posts> posts;
+    private List<Post> posts;
 }
